@@ -1,3 +1,18 @@
-h1{
-    color: red;
+header {
+    height: 100px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    width: 95%;
+    margin: 0 auto;
+    ul {
+        display: flex;
+        // margin-right: 20px;
+        li {
+            margin-right: 30px;
+        }
+        li:last-child {
+            margin-right: 0;
+        }
+    }
 }
