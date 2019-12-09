@@ -32,7 +32,25 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-h1 {
-  color: red; }
+header {
+  height: 100px;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: end;
+          align-items: flex-end;
+  width: 95%;
+  margin: 0 auto; }
+
+header ul {
+  display: -webkit-box;
+  display: flex; }
+
+header ul li {
+  margin-right: 30px; }
+
+header ul li:last-child {
+  margin-right: 0; }
 
 /*# sourceMappingURL=style.css.map */
