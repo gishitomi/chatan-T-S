@@ -1,0 +1,42 @@
+
+
+
+
+.theme{
+    text-align: center;
+}
+
+
+.theme{
+    font-size: 35px;
+}
+
+
+.article{
+    width: 80%;
+    margin: 0 auto;
+    .all-pic{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        .pic{
+            padding-bottom: 100px;
+            margin-bottom: 100px;
+            .p{
+                width: 300px;
+                padding-top: 10px;
+            }
+            .under{
+                height: 150px;
+                display: flex;
+                justify-content: flex-end;
+                align-items: flex-end;
+                .read{
+                    .underber{
+                        border-bottom: 2px solid black;
+                    }
+                }
+            }
+        }
+    }
+}

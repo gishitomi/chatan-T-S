@@ -32,6 +32,59 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+.theme {
+  text-align: center; }
+
+.theme {
+  font-size: 35px; }
+
+.article {
+  width: 80%;
+  margin: 0 auto; }
+
+.article .all-pic {
+  display: -webkit-box;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; }
+
+.article .all-pic .pic {
+  padding-bottom: 100px;
+  margin-bottom: 100px; }
+
+.article .all-pic .pic .p {
+  width: 300px;
+  padding-top: 10px; }
+
+.article .all-pic .pic .under {
+  height: 150px;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: end;
+          align-items: flex-end; }
+
+.article .all-pic .pic .under .read .underber {
+  border-bottom: 2px solid black; }
+
+.footer {
+  background-color: black;
+  height: 50px;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center; }
+
+.footer .copy {
+  color: white;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center; }
+
 header {
   height: 100px;
   display: -webkit-box;
