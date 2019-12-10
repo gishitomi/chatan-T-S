@@ -36,11 +36,14 @@ table {
   text-align: center; }
 
 .theme {
-  font-size: 35px; }
+  font-size: 35px;
+  margin-top: 80px; }
 
 .article {
   width: 1152px;
-  margin: 0 auto; }
+  margin: 0 auto;
+  margin-top: 50px;
+  margin-bottom: 100px; }
 
 .article .all-pic {
   display: -webkit-box;
@@ -49,7 +52,6 @@ table {
   justify-content: space-around; }
 
 .article .all-pic .pic {
-  padding-bottom: 100px;
   margin-bottom: 100px; }
 
 .article .all-pic .pic .p {
@@ -137,6 +139,9 @@ main p {
   position: absolute; }
 
 .main-visual {
+  width: 100%; }
+
+.main-visual .main-visual li, .main-visual .main-visual img {
   width: 100%; }
 
 /*# sourceMappingURL=style.css.map */
