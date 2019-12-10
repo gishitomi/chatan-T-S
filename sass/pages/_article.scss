@@ -24,14 +24,15 @@
                 height: 42px;
                 padding-top: 10px;
             }
-            .under {
-                height: 100px;
-                display: flex;
-                justify-content: flex-end;
-                align-items: flex-end;
-                .read {
-                    .underber {
-                        border-bottom: 2px solid black;
+
+            .underAll{
+                .under{
+                    margin-top: 100px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-end;
+                    .read{
+                        padding-bottom: 10px;
                     }
                 }
             }
@@ -39,6 +40,21 @@
     }
 }
 
+
+.line{
+    border-bottom: 2px solid black;
+    transition: width 1s ease-out;
+    width: 20px;
+    margin-bottom: 30px;
+}
+
+.read:hover+.line{
+    width: 100px;
+}
+
 .pic:hover {
     box-shadow: 5px 5px 5px 5px rgb(216, 216, 216);
 }
+
+
+

@@ -60,17 +60,28 @@ table {
   height: 42px;
   padding-top: 10px; }
 
-.article .all-pic .pic .under {
-  height: 100px;
+.article .all-pic .pic .underAll .under {
+  margin-top: 100px;
   display: -webkit-box;
   display: flex;
-  -webkit-box-pack: end;
-          justify-content: flex-end;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
   -webkit-box-align: end;
           align-items: flex-end; }
 
-.article .all-pic .pic .under .read .underber {
-  border-bottom: 2px solid black; }
+.article .all-pic .pic .underAll .under .read {
+  padding-bottom: 10px; }
+
+.line {
+  border-bottom: 2px solid black;
+  -webkit-transition: width 1s ease-out;
+  transition: width 1s ease-out;
+  width: 20px;
+  margin-bottom: 30px; }
+
+.read:hover + .line {
+  width: 100px; }
 
 .pic:hover {
   box-shadow: 5px 5px 5px 5px #d8d8d8; }
