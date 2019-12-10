@@ -27,4 +27,8 @@ main {
 
 .main-visual {
     width: 100%;
+    .main-visual li,
+    .main-visual img {
+        width: 100%;
+    }
 }

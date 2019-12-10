@@ -1,38 +1,35 @@
-
-
-
-
-.theme{
+.theme {
     text-align: center;
 }
 
-
-.theme{
+.theme {
     font-size: 35px;
+    margin-top: 80px;
 }
 
-
-.article{
+.article {
     width: 1152px;
     margin: 0 auto;
-    .all-pic{
+    margin-top: 50px;
+    margin-bottom: 100px;
+    .all-pic {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
-        .pic{
-            padding-bottom: 100px;
+        .pic {
+            // padding-bottom: 100px;
             margin-bottom: 100px;
-            .p{
+            .p {
                 width: 300px;
                 padding-top: 10px;
             }
-            .under{
+            .under {
                 height: 150px;
                 display: flex;
                 justify-content: flex-end;
                 align-items: flex-end;
-                .read{
-                    .underber{
+                .read {
+                    .underber {
                         border-bottom: 2px solid black;
                     }
                 }
