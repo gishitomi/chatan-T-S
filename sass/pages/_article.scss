@@ -24,10 +24,11 @@
             margin-bottom: 100px;
             .p{
                 width: 300px;
+                height: 42px;
                 padding-top: 10px;
             }
             .under{
-                height: 150px;
+                height: 100px;
                 display: flex;
                 justify-content: flex-end;
                 align-items: flex-end;
@@ -39,4 +40,10 @@
             }
         }
     }
+}
+
+
+
+.pic:hover{
+    box-shadow: 5px 5px 5px 5px rgb(216, 216, 216);
 }
