@@ -21,4 +21,13 @@ $(function() {
             $('nav').removeClass('open');
         }
     });
+    //ドロップダウンメニュー
+    $('.berger-menu').hide();
+    $('.menu').click(function() {
+        $('.berger-menu').slideToggle();
+    });
+
+    // ドロップダウンメニュー終了
+
+
 });
