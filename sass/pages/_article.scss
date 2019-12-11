@@ -7,6 +7,12 @@
     margin-top: 80px;
 }
 
+@include media(sp) {
+    .theme {
+        font-size: 50px;
+    }
+}
+
 .article {
     width: 80%;
     margin: 0 auto;
@@ -24,15 +30,16 @@
                 height: 42px;
                 padding-top: 10px;
             }
-
-            .underAll{
-                .under{
+            .underAll {
+                margin-right: 20px;
+                .under {
                     margin-top: 100px;
                     display: flex;
                     flex-direction: column;
                     align-items: flex-end;
-                    .read{
+                    .read {
                         padding-bottom: 10px;
+                        cursor: pointer;
                     }
                 }
             }
@@ -40,21 +47,17 @@
     }
 }
 
-
-.line{
+.line {
     border-bottom: 2px solid black;
     transition: width 1s ease-out;
     width: 20px;
     margin-bottom: 30px;
 }
 
-.read:hover+.line{
+.read:hover+.line {
     width: 100px;
 }
 
 .pic:hover {
     box-shadow: 5px 5px 5px 5px rgb(216, 216, 216);
 }
-
-
-
