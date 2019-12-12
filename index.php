@@ -72,7 +72,7 @@
                     <p class="p">おしゃれカフェがありますよ</p>
                     <div class="underAll">
                         <div class="under">
-                            <p class="read">READE MORE</p>
+                            <p class="read">READ MORE</p>
                             <p class="line"></p>
                         </div>
                     </div>
@@ -83,7 +83,7 @@
                     <p class="p">あのネオンはいつ交換するのか！？観覧車の謎に迫る!</p>
                     <div class="underAll">
                         <div class="under">
-                            <p class="read">READE MORE</p>
+                            <p class="read">READ MORE</p>
                             <p class="line"></p>
                         </div>
                     </div>
@@ -94,7 +94,7 @@
                     <p class="p">ラソナの社内はこんなんよ</p>
                     <div class="underAll">
                         <div class="under">
-                            <p class="read">READE MORE</p>
+                            <p class="read">READ MORE</p>
                             <p class="line"></p>
                         </div>
                     </div>
@@ -105,7 +105,7 @@
                     <p class="p">お隣のアラハはハワイ？</p>
                     <div class="underAll">
                         <div class="under">
-                            <p class="read">READE MORE</p>
+                            <p class="read">READ MORE</p>
                             <p class="line"></p>
                         </div>
                     </div>
@@ -116,7 +116,7 @@
                     <p class="p">なぜテント？ラソナの人に聞いてみた</p>
                     <div class="underAll">
                         <div class="under">
-                            <p class="read">READE MORE</p>
+                            <p class="read">READ MORE</p>
                             <p class="line"></p>
                         </div>
                     </div>
@@ -127,11 +127,14 @@
                     <p class="p">ベイエリアおしゃれすぎる問題</p>
                     <div class="underAll">
                         <div class="under">
-                            <p class="read">READE MORE</p>
+                            <p class="read">READ MORE</p>
                             <p class="line"></p>
                         </div>
                     </div>
                 </div>
+                <?php if (3 < count_user_posttype(get_the_author_meta('ID'),"post")){ ?>
+  <p class="more_btn"><?php the_author_posts_link(); ?></p>
+<?php } ?>
                 <?php if (have_posts()) : ?>
                     <?php while (have_posts()) : the_post(); ?>
                         <div class="pic">
@@ -142,7 +145,7 @@
                             <p class="p"><?php the_title(); ?></p>
                             <div class="underAll">
                                 <div class="under">
-                                    <p class="read">READE MORE</p>
+                                    <p class="read">READ MORE</p>
                                     <p class="line"></p>
                                 </div>
                             </div>
@@ -161,6 +164,11 @@
     <script src=" <?= get_template_directory_uri(); ?>/assets/js/jquery.js"></script>
     <script src=" <?= get_template_directory_uri(); ?>/assets/js/hover.js"></script>
     <script src=" <?= get_template_directory_uri(); ?>/assets/js/humberger.js"></script>
+    <script>
+    $(document).ready(function() {
+  $('.more_btn p').html('もっと見る');
+});
+    </script>
 </body>
 
 </html>
