@@ -1,6 +1,6 @@
-var infScroll = new InfiniteScroll('.postWrap', { //大枠のセレクタ
-    append: '.post', //読み込むボックスたちのセレクタ
-    path: '.pagination .next', //次ページへ飛ぶための「次へ」ボタンのセレクタ
+var infScroll = new InfiniteScroll('.article', { //大枠のセレクタ
+    append: '.pic', //読み込むボックスたちのセレクタ
+    // path: '.pagination .next', //次ページへ飛ぶための「次へ」ボタンのセレクタ
     hideNav: '.pagination', //ページネーションのセレクタ
     button: '.moreButton', //「もっと見る」ボタンのセレクタ
     scrollThreshold: false, //自動で次のページを読み込まないようにする

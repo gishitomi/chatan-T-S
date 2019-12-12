@@ -21,7 +21,7 @@
     .all-pic {
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-around;
+        justify-content: space-between;
         .pic {
             // padding-bottom: 100px;
             margin-bottom: 100px;
@@ -43,6 +43,11 @@
                     }
                 }
             }
+        }
+    }
+    @include media(sp) {
+        .all-pic {
+            justify-content: space-around;
         }
     }
 }
