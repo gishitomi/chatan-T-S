@@ -317,7 +317,8 @@ main .sp {
   main {
     margin-top: 0; }
   main .pc {
-    display: none; }
+    display: none;
+    cursor: auto; }
   main .sp {
     display: block; }
   main .p-pc {

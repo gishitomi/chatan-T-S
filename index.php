@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href=" <?= get_template_directory_uri(); ?>/assets/css/style.css">
+
     <?php wp_head(); ?>
 </head>
 
@@ -42,8 +43,16 @@
                 <img src=" <?= get_template_directory_uri(); ?>/assets/img/logo.png" alt="" class="logo">
 
                 <div class="mainvisual">
-                    <img src=" <?= get_template_directory_uri(); ?>/assets/img/visual_1_pc.png" alt="" class="pc">
-                    <img src=" <?= get_template_directory_uri(); ?>/assets/img/visual_1_sp.png" alt="" class="sp">
+                    <div class="pc">
+                        <?php
+                        echo do_shortcode('[smartslider3 slider=2]');
+                        ?>
+                    </div>
+                    <div class="sp">
+                        <?php
+                        echo do_shortcode('[smartslider3 slider=3]');
+                        ?>
+                    </div>
                 </div>
 
                 <img src=" <?= get_template_directory_uri(); ?>/assets/img/visual_text_pc.png" alt="" class="visual-text">
@@ -123,6 +132,23 @@
                         </div>
                     </div>
                 </div>
+                <?php if (have_posts()) : ?>
+                    <?php while (have_posts()) : the_post(); ?>
+                        <div class="pic">
+                            <div class="img-box">
+                                <?php the_content(); ?>
+                            </div>
+                            <p><?php the_date(); ?></p>
+                            <p class="p"><?php the_title(); ?></p>
+                            <div class="underAll">
+                                <div class="under">
+                                    <p class="read">READE MORE</p>
+                                    <p class="line"></p>
+                                </div>
+                            </div>
+                        </div>
+                    <?php endwhile; ?>
+                <?php endif; ?>
             </div>
         </section>
         <footer class="footer">
