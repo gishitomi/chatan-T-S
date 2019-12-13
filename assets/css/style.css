@@ -80,7 +80,9 @@ table {
 
 .article .all-pic .pic .underAll .under .read {
   padding-bottom: 10px;
-  cursor: pointer; }
+  cursor: pointer;
+  text-decoration: none;
+  color: black; }
 
 @media only screen and (max-width: 767px) {
   .article .all-pic {

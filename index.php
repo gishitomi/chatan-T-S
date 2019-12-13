@@ -66,13 +66,13 @@
         </div>
         <section class="article">
             <div class="all-pic">
-                <div class="pic">
+                <!-- <div class="pic">
                     <img src=" <?= get_template_directory_uri(); ?>/assets/img/post_img_1.png" alt="">
                     <p>2018/5/20</p>
                     <p class="p">おしゃれカフェがありますよ</p>
                     <div class="underAll">
                         <div class="under">
-                            <p class="read">READ MORE</p>
+                            <a href="" class="read"><p>READ MORE</p></a>
                             <p class="line"></p>
                         </div>
                     </div>
@@ -83,7 +83,8 @@
                     <p class="p">あのネオンはいつ交換するのか！？観覧車の謎に迫る!</p>
                     <div class="underAll">
                         <div class="under">
-                            <p class="read">READ MORE</p>
+                            <a href="" class="read"><p>READ MORE</p></a>
+                            
                             <p class="line"></p>
                         </div>
                     </div>
@@ -94,7 +95,7 @@
                     <p class="p">ラソナの社内はこんなんよ</p>
                     <div class="underAll">
                         <div class="under">
-                            <p class="read">READ MORE</p>
+                            <a href="" class="read"><p>READ MORE</p></a>
                             <p class="line"></p>
                         </div>
                     </div>
@@ -105,7 +106,7 @@
                     <p class="p">お隣のアラハはハワイ？</p>
                     <div class="underAll">
                         <div class="under">
-                            <p class="read">READ MORE</p>
+                            <a href="" class="read"><p>READ MORE</p></a>
                             <p class="line"></p>
                         </div>
                     </div>
@@ -116,7 +117,8 @@
                     <p class="p">なぜテント？ラソナの人に聞いてみた</p>
                     <div class="underAll">
                         <div class="under">
-                            <p class="read">READ MORE</p>
+                            <a href="" class="read"> <p>READ MORE</p></a>
+                           
                             <p class="line"></p>
                         </div>
                     </div>
@@ -127,26 +129,30 @@
                     <p class="p">ベイエリアおしゃれすぎる問題</p>
                     <div class="underAll">
                         <div class="under">
-                            <p class="read">READ MORE</p>
+                            <a href="#" class="read"><p>READ MORE</p></a>
+                            
                             <p class="line"></p>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </section>
         <article class="article" id="article-list">
             <div class="all-pic">
-        <?php
-        $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 0.6;
-        $args = array(
-        'orderby' => 'date',
-        'order'   => 'DESC',
-        'paged' => $paged,
-        );
-        $article_lists = new WP_Query($args);
-        ?>
-        <?php if ($article_lists->have_posts() ) : ?>
-        <?php while ($article_lists->have_posts() ) : $article_lists->the_post(); ?>
+                <?php
+                $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
+                $args = array(
+                'orderby' => 'date',
+                'order'   => 'DESC',
+                'posts_per_page' => 6,			// １ページあたりの記事数
+                'post_type' => 'post',			// 対象投稿タイプ
+                'post_status' => 'publish',		// 公開記事
+                'paged' => $paged,				// 取得ページ
+                );
+                $article_lists = new WP_Query($args);
+                ?>
+                <?php if ($article_lists->have_posts() ) : ?>
+                    <?php while ($article_lists->have_posts() ) : $article_lists->the_post(); ?>
                         <div class="pic">
                             <div class="img-box">
                                 <?php the_content(); ?>
@@ -155,20 +161,20 @@
                             <p class="p"><?php the_title(); ?></p>
                             <div class="underAll">
                                 <div class="under">
-                                    <p class="read">READ MORE</p>
+                                   <a href="" class="read"><p>READ MORE</p></a> 
                                     <p class="line"></p>
                                 </div>
                             </div>
                         </div>
                     <?php endwhile; ?>
                 <?php endif; ?>
-                </div>
+            </div>
         </article>
         <?php if($paged < $article_lists->max_num_pages) {?>
-<div class="moreread" id="next">
-  <a href="<?php echo next_posts($article_lists->max_num_pages, false); ?>">もっと見る</a>
-</div>
-<?php }?>
+            <div class="moreread" id="next">
+                <a href="<?php echo next_posts($article_lists->max_num_pages, false); ?>">もっと見る</a>
+            </div>
+        <?php }?>
         <footer class="footer">
             <p class="copy">Copyright © Shinohara.ALL RGHTS RESERVED.</p>
         </footer>
@@ -181,28 +187,28 @@
     <script src=" <?= get_template_directory_uri(); ?>/assets/js/humberger.js"></script>
     <script src=" <?= get_template_directory_uri(); ?>/assets/js/jquery.autopager-1.0.0.js"></script>
     <script>
-  var maxpage = <?php echo $wp_query->max_num_pages; ?>;  // 最大ページ数取得
-  $('#loading').css('display', 'none');　// ローディング画像は一旦消す。
-  $.autopager({
-    content: '#article-list .pic',// 読み込むコンテンツ
-    link: '#next a', // 次ページへのリンク
-    autoLoad: false,// スクロールの自動読込み解除
- 
-    start: function(current, next){
-      $('#loading').css('display', 'block');
-      $('#next a').css('display', 'none');
-    },
- 
-    load: function(current, next){
-        $('#loading').css('display', 'none');
-        $('#next a').css('display', 'block');
-    }
-});
- 
-$('#next a').click(function(){ // 次ページへのリンクボタン
-    $.autopager('load'); // 次ページを読み込む
-    return false;
-});
+        var maxpage = <?php echo $wp_query->max_num_pages; ?>;  // 最大ページ数取得
+        $('#loading').css('display', 'none'); // ローディング画像は一旦消す。
+        $.autopager({
+            content: '#article-list .pic',// 読み込むコンテンツ
+            link: '#next a', // 次ページへのリンク
+            autoLoad: false,// スクロールの自動読込み解除
+        
+            start: function(current, next){
+                $('#loading').css('display', 'block');
+                $('#next a').css('display', 'none');
+            },
+        
+            load: function(current, next){
+                $('#loading').css('display', 'none');
+                $('#next a').css('display', 'block');
+            }
+        });
+        
+        $('#next a').click(function(){ // 次ページへのリンクボタン
+            $.autopager('load'); // 次ページを読み込む
+            return false;
+        });
 </script>
 
 </body>
