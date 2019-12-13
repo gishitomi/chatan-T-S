@@ -134,7 +134,7 @@
         <article class="article" id="article-list">
             <div class="all-pic">
         <?php
-        $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 0.6;
+        $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
         $args = array(
         'orderby' => 'date',
         'order'   => 'DESC',
