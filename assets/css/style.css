@@ -147,6 +147,7 @@ header ul {
   display: flex; }
 
 header ul li {
+  text-decoration: none;
   margin-right: 30px;
   font-weight: 500;
   font-size: 20px;
@@ -171,6 +172,13 @@ header img {
   header img {
     display: block;
     width: 30%; } }
+
+.textwidget p a {
+  text-decoration: none;
+  margin-right: 30px;
+  font-weight: 500;
+  font-size: 20px;
+  color: black; }
 
 .menu {
   width: 36px;

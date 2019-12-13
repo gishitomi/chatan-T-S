@@ -14,11 +14,8 @@
 <body>
     <div class="container">
         <header>
-            <ul>
-                <li>Menu01</li>
-                <li>Menu02</li>
-                <li>Menu03</li>
-                <li>Menu04</li>
+            <ul class="qqq">
+                <p class="ss"><?php dynamic_sidebar('smartslider_area_1'); ?></p>
             </ul>
             <img src=" <?= get_template_directory_uri(); ?>/assets/img/logo.png" alt="">
 
