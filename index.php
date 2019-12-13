@@ -132,8 +132,21 @@
                         </div>
                     </div>
                 </div>
-                <?php if (have_posts()) : ?>
-                    <?php while (have_posts()) : the_post(); ?>
+            </div>
+        </section>
+        <article class="article" id="article-list">
+            <div class="all-pic">
+        <?php
+        $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 0.6;
+        $args = array(
+        'orderby' => 'date',
+        'order'   => 'DESC',
+        'paged' => $paged,
+        );
+        $article_lists = new WP_Query($args);
+        ?>
+        <?php if ($article_lists->have_posts() ) : ?>
+        <?php while ($article_lists->have_posts() ) : $article_lists->the_post(); ?>
                         <div class="pic">
                             <div class="img-box">
                                 <?php the_content(); ?>
@@ -149,8 +162,13 @@
                         </div>
                     <?php endwhile; ?>
                 <?php endif; ?>
-            </div>
-        </section>
+                </div>
+        </article>
+        <?php if($paged < $article_lists->max_num_pages) {?>
+<div class="moreread" id="next">
+  <a href="<?php echo next_posts($article_lists->max_num_pages, false); ?>">もっと見る</a>
+</div>
+<?php }?>
         <footer class="footer">
             <p class="copy">Copyright © Shinohara.ALL RGHTS RESERVED.</p>
         </footer>
@@ -161,6 +179,35 @@
     <script src=" <?= get_template_directory_uri(); ?>/assets/js/jquery.js"></script>
     <script src=" <?= get_template_directory_uri(); ?>/assets/js/hover.js"></script>
     <script src=" <?= get_template_directory_uri(); ?>/assets/js/humberger.js"></script>
+<<<<<<< HEAD
+=======
+    <script src=" <?= get_template_directory_uri(); ?>/assets/js/jquery.autopager-1.0.0.js"></script>
+    <script>
+  var maxpage = <?php echo $wp_query->max_num_pages; ?>;  // 最大ページ数取得
+  $('#loading').css('display', 'none');　// ローディング画像は一旦消す。
+  $.autopager({
+    content: '#article-list .pic',// 読み込むコンテンツ
+    link: '#next a', // 次ページへのリンク
+    autoLoad: false,// スクロールの自動読込み解除
+ 
+    start: function(current, next){
+      $('#loading').css('display', 'block');
+      $('#next a').css('display', 'none');
+    },
+ 
+    load: function(current, next){
+        $('#loading').css('display', 'none');
+        $('#next a').css('display', 'block');
+    }
+});
+ 
+$('#next a').click(function(){ // 次ページへのリンクボタン
+    $.autopager('load'); // 次ページを読み込む
+    return false;
+});
+</script>
+
+>>>>>>> 063ddf809357a0b0c954cdb9ebc9656d84775fce
 </body>
 
 </html>

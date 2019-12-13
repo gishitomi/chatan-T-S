@@ -1,12 +1,28 @@
-var infScroll = new InfiniteScroll('.article', { //大枠のセレクタ
-    append: '.pic', //読み込むボックスたちのセレクタ
-    // path: '.pagination .next', //次ページへ飛ぶための「次へ」ボタンのセレクタ
-    hideNav: '.pagination', //ページネーションのセレクタ
-    button: '.moreButton', //「もっと見る」ボタンのセレクタ
-    scrollThreshold: false, //自動で次のページを読み込まないようにする
-    status: '.scroller-status', // ステータスのセレクタ
-    history: 'false', //読み込み後のURLを変更しない
-});
-infScroll.on('append', function(response, path, items) {
-    //読み込み後に何かしたい場合はここに書く
+$
+function({
+
+
+    var maxpage = <?php echo $wp_query->max_num_pages; ?>; // 最大ページ数取得
+    $('#loading').css('display', 'none');　 // ローディング画像は一旦消す。
+    $.autopager({
+        content: '#article-list', // 読み込むコンテンツ
+        link: '#next a', // 次ページへのリンク
+        autoLoad: false, // スクロールの自動読込み解除
+
+        start: function(current, next) {
+            $('#loading').css('display', 'block');
+            $('#next a').css('display', 'none');
+        },
+
+        load: function(current, next) {
+            $('#loading').css('display', 'none');
+            $('#next a').css('display', 'block');
+        }
+    });
+
+    $('#next a').click(function() { // 次ページへのリンクボタン
+        $.autopager('load'); // 次ページを読み込む
+        return false;
+    });
+
 });
