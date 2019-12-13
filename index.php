@@ -176,8 +176,6 @@
     <script src=" <?= get_template_directory_uri(); ?>/assets/js/jquery.js"></script>
     <script src=" <?= get_template_directory_uri(); ?>/assets/js/hover.js"></script>
     <script src=" <?= get_template_directory_uri(); ?>/assets/js/humberger.js"></script>
-<<<<<<< HEAD
-=======
     <script src=" <?= get_template_directory_uri(); ?>/assets/js/jquery.autopager-1.0.0.js"></script>
     <script>
   var maxpage = <?php echo $wp_query->max_num_pages; ?>;  // 最大ページ数取得
@@ -204,7 +202,6 @@ $('#next a').click(function(){ // 次ページへのリンクボタン
 });
 </script>
 
->>>>>>> 063ddf809357a0b0c954cdb9ebc9656d84775fce
 </body>
 
 </html>
