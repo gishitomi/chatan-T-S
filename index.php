@@ -72,7 +72,7 @@
                     <p class="p">おしゃれカフェがありますよ</p>
                     <div class="underAll">
                         <div class="under">
-                            <a href="" class="read"><p>READ MORE</p></a>
+                            <p class="read">READE MORE</p>
                             <p class="line"></p>
                         </div>
                     </div>
@@ -83,8 +83,7 @@
                     <p class="p">あのネオンはいつ交換するのか！？観覧車の謎に迫る!</p>
                     <div class="underAll">
                         <div class="under">
-                            <a href="" class="read"><p>READ MORE</p></a>
-                            
+                            <p class="read">READE MORE</p>
                             <p class="line"></p>
                         </div>
                     </div>
@@ -95,7 +94,7 @@
                     <p class="p">ラソナの社内はこんなんよ</p>
                     <div class="underAll">
                         <div class="under">
-                            <a href="" class="read"><p>READ MORE</p></a>
+                            <p class="read">READE MORE</p>
                             <p class="line"></p>
                         </div>
                     </div>
@@ -106,7 +105,7 @@
                     <p class="p">お隣のアラハはハワイ？</p>
                     <div class="underAll">
                         <div class="under">
-                            <a href="" class="read"><p>READ MORE</p></a>
+                            <p class="read">READE MORE</p>
                             <p class="line"></p>
                         </div>
                     </div>
@@ -117,8 +116,7 @@
                     <p class="p">なぜテント？ラソナの人に聞いてみた</p>
                     <div class="underAll">
                         <div class="under">
-                            <a href="" class="read"> <p>READ MORE</p></a>
-                           
+                            <p class="read">READE MORE</p>
                             <p class="line"></p>
                         </div>
                     </div>
@@ -129,8 +127,7 @@
                     <p class="p">ベイエリアおしゃれすぎる問題</p>
                     <div class="underAll">
                         <div class="under">
-                            <a href="#" class="read"><p>READ MORE</p></a>
-                            
+                            <p class="read">READE MORE</p>
                             <p class="line"></p>
                         </div>
                     </div>
@@ -185,32 +182,6 @@
     <script src=" <?= get_template_directory_uri(); ?>/assets/js/jquery.js"></script>
     <script src=" <?= get_template_directory_uri(); ?>/assets/js/hover.js"></script>
     <script src=" <?= get_template_directory_uri(); ?>/assets/js/humberger.js"></script>
-    <script src=" <?= get_template_directory_uri(); ?>/assets/js/jquery.autopager-1.0.0.js"></script>
-    <script>
-        var maxpage = <?php echo $wp_query->max_num_pages; ?>;  // 最大ページ数取得
-        $('#loading').css('display', 'none'); // ローディング画像は一旦消す。
-        $.autopager({
-            content: '#article-list .pic',// 読み込むコンテンツ
-            link: '#next a', // 次ページへのリンク
-            autoLoad: false,// スクロールの自動読込み解除
-        
-            start: function(current, next){
-                $('#loading').css('display', 'block');
-                $('#next a').css('display', 'none');
-            },
-        
-            load: function(current, next){
-                $('#loading').css('display', 'none');
-                $('#next a').css('display', 'block');
-            }
-        });
-        
-        $('#next a').click(function(){ // 次ページへのリンクボタン
-            $.autopager('load'); // 次ページを読み込む
-            return false;
-        });
-</script>
-
 </body>
 
 </html>
